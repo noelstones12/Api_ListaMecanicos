@@ -1,6 +1,6 @@
-from django.urls import path,include
+#from django.urls import path,include
 #from rest_framework import routers
-from api import views
+#from api import views
 
 #router = routers.DefaultRouter()
 #router.register(r'agendamientos', views.AgendamientoViewsets)
