@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'drf.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'talleres_mecanicos',
+        'USER': 'root',
+        'PASSWORD': 'David260212/',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 

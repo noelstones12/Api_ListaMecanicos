@@ -1,8 +1,7 @@
 from rest_framework import serializers
-from .models import Agendamiento
+from .models import Taller
 
-class AgendamientoSerializer(serializers.ModelSerializer):
+class TallerSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Agendamiento
-        #fields=('taller','fecha','hora')
+        model = Taller
         fields = '__all__'
