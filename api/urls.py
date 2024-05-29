@@ -1,27 +1,20 @@
-#from django.urls import path,include
-#from rest_framework import routers
-#from api import views
+from django.urls import path, include
+from rest_framework import routers
+from api import views
+from django.shortcuts import render
+from django.urls import re_path
+from django.views.generic.base import RedirectView
 
-#router = routers.DefaultRouter()
-#router.register(r'agendamientos', views.AgendamientoViewsets)
-
-#urlpatterns=[
-#    path('', include(router.urls))
-#]
-
-from django.urls import path
-from .views import TalleresList
+router = routers.DefaultRouter()
+router.register(r'Talleres', views.TalleresViewSets)
 
 urlpatterns = [
-    path('talleres/', TalleresList.as_view(), name='talleres-list'),
+    path('talleres/', views.listar_talleres, name='listar_talleres'),
 ]
 
+def vista_raiz(request):
+    return render(request, 'index.html')
 
-
-from django.contrib import admin
-from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('talleres.urls')),
+urlpatterns += [
+    re_path(r'^$', RedirectView.as_view(url='/api/v1/', permanent=False)),
 ]

@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Agendamiento
+from .models import Talleres
 
-# Modelo Registrado
-admin.site.register(Agendamiento);
+# Registro del modelo Talleres
+admin.site.register(Talleres);
 
