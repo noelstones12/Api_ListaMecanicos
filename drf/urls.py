@@ -14,6 +14,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+"""
+urlpatterns = [
+    path('talleres/', views.listar_talleres, name='listar_talleres'),
+]
+
+
+def vista_raiz(request):
+    return render(request, 'index.html')
+
+urlpatterns += [
+    re_path(r'^$', RedirectView.as_view(url='/api/v1/', permanent=False)),
+]
+"""
 from django.contrib import admin
 from django.urls import path,include
 #from rest_framework.documentation import include_docs_urls

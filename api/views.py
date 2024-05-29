@@ -2,20 +2,21 @@ from rest_framework import viewsets
 from .models import Talleres
 from .serializer import TalleresSerializer 
 from django.http import JsonResponse
-import datetime
-from .models import Agendamiento
-from django.http import HttpResponse
+#import datetime
+#from .models import Agendamiento
+#from django.http import HttpResponse
 
 #Classe para el Viewsets
 class TalleresViewSets(viewsets.ModelViewSet):
     queryset = Talleres.objects.all()
     serializer_class = TalleresSerializer
 
+
 #Listado de Talleres
 def listar_talleres(request):
     talleres = Talleres.objects.values('nombre_taller', 'comuna')
     return JsonResponse(list(talleres), safe=False)
-
+"""
 #Vista del Agendamiento
 def agendar_taller(request):
     if request.method == 'POST':
@@ -47,3 +48,4 @@ def agendar_taller(request):
 #Vista raíz
 def vista_raiz(request):
     return HttpResponse("Esta es la vista raíz de la API")
+    """

@@ -9,12 +9,8 @@ router = routers.DefaultRouter()
 router.register(r'Talleres', views.TalleresViewSets)
 
 urlpatterns = [
-    path('talleres/', views.listar_talleres, name='listar_talleres'),
+    path('', include(router.urls))
 ]
 
-def vista_raiz(request):
-    return render(request, 'index.html')
 
-urlpatterns += [
-    re_path(r'^$', RedirectView.as_view(url='/api/v1/', permanent=False)),
-]
+

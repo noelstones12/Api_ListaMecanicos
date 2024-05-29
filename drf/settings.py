@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'api',
-    'drf',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -79,11 +78,11 @@ WSGI_APPLICATION = 'drf.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'talleres_mecanicos',
+        'NAME': 'prueba',
         'USER': 'root',
-        'PASSWORD': 'David260212/',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '33060',
     }
 }
 
